@@ -9,6 +9,31 @@
 <script type="text/javascript">
   function changeIt(view){document.getElementById('rta').src= view;}
 </script>
+<script type="text/javascript" language="javascript" src="/media/js/jquery.js"></script> 
+<script type="text/javascript" language="javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
+   <script type="text/javascript" language="javascript" src="/media/js/jquery.dataTables.js"></script>
+
+<script>
+   $(document).ready(function() {
+       //$('td.val():contains(0)').closest('tr.alt').css('background-color', '#cd0000');
+       //$('td.status[value=Zero]').closest('tr').css('background-color', 'red');
+       
+       //       if ( $( 'table#queues tbody tr td:last-child' ).html() == 0 ) {
+       //	 $( 'table#queues tbody tr td:last-child' ).css( 'background-color', 'red' );
+       //       }
+       $( 'table#queues tbody tr td:last-child' ).each( function () {
+	   if ( ( $(this).html() != '0' ) && ( $(this).html().length < 4 ) ){
+	     $(this).closest('tr').css( 'background-color', '#FFBBBB' );
+	   }
+
+	 });
+       
+
+     });
+
+
+</script>
+
 </head>
 <body>
 
@@ -16,13 +41,19 @@
 $owner  = $_GET['owner'];
 echo "<body><table align=center width=95% border=\"1\" cellpadding=\"0\" cellspacing=\"0\"><tbody>";
 echo "<tr><td><h1>PHPQstat</h1></td></tr>
-      <tr><td CLASS=\"bottom\" align=center><a href='index.php'>Home</a> *  <a href=\"qhost.php?owner=$owner\">Hosts status</a> *  <a href=\"qstat.php?owner=$owner\">Queue status</a> * <a href=\"qstat_user.php?owner=$owner\">Jobs status ($owner)</a> * <a href=\"about.php?owner=$owner\">About PHPQstat</a></td></tr>";
+      <tr><td CLASS=\"bottom\" align=center><a href='index.php'>Home</a> * 
+<a href=\"qhost.php?owner=$owner\">Hosts status</a> *  
+<a href=\"qstat.php?owner=$owner\">Queue status</a> * 
+<a href=\"qstat_user.php?owner=$owner\">Jobs status ($owner)</a> * 
+<a href=\"queueinfo.php?owner=all\">Queue informations</a> * 
+<a href=\"pe.php?owner=all\">PEs</a> * 
+<a href=\"about.php?owner=$owner\">About PHPQstat</a></td></tr>";
 ?>
     <tr>
       <td>
 <br>
 
-	<table align=center width=95% border="1" cellpadding="0" cellspacing="0">
+	<table class="list" id='queues' align=center width=95%>
         <tbody>
 		<tr CLASS="header">
 		<td>Queue</td>
@@ -60,7 +91,7 @@ $qstat = simplexml_load_file("/tmp/$token.xml");
 
 foreach ($qstat->xpath('//cluster_queue_summary') as $cluster_queue_summary) {
 echo "                <tr>
-                <td><a href=qstat_user.php?owner=$owner&queue=$cluster_queue_summary->name>$cluster_queue_summary->name</a></td>
+                <td><a href=qstat_user.php?owner=$owner&queue=$cluster_queue_summary->name>$cluster_queue_summary->name</a> (<a href=\"queueinfo.php#$cluster_queue_summary->name\">info</a>)</td>
                 <td>$cluster_queue_summary->load</td>
                 <td>$cluster_queue_summary->used</td>
                 <td>$cluster_queue_summary->resv</td>
@@ -76,7 +107,7 @@ echo "                </tbody>
 	</table>
 
 <br>
-	<table align=center width=95% border='1' cellpadding='0' cellspacing='0'>
+	<table id='jobs' align=center width=95%>
         <tbody>
 		<tr CLASS='header'>
 		<td>Jobs status</td>
@@ -127,7 +158,7 @@ echo "          <tr>
                 </tr>
 ";
 
-//exec("rm /tmp/$token.xml");
+exec("rm /tmp/$token.xml");
 ?>
 
 	  </tbody>

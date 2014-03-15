@@ -1,0 +1,8 @@
+#!/bin/bash
+# List all instances
+# Exporting Environment Variables
+#########################################
+source ./phpqstat.conf
+#########################################
+
+qstat -f > $1

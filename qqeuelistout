@@ -1,0 +1,10 @@
+#!/bin/bash
+# Exporting Environment Variables
+#########################################
+source ./phpqstat.conf
+#########################################
+
+for i in `qconf -sql`; do 
+    qconf -sq $i >> $1
+    echo "===" >> $1
+done

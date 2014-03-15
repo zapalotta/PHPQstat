@@ -1,3 +1,6 @@
+<?php header ( 'Location: qstat.php?owner=all' ); ?>
+
+
 <html>
 
 <head>

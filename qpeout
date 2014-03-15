@@ -1,0 +1,6 @@
+#!/bin/bash
+# Exporting Environment Variables
+#########################################
+source ./phpqstat.conf
+#########################################
+qconf -sp "$1" > $2

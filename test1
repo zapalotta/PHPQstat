@@ -1,0 +1,135 @@
+background.q@bs-dsvr02.ethz.ch B 0/0/8 0.74 lx24-amd64 
+background.q@bs-dsvr04.ethz.ch B 0/0/8 0.06 lx24-amd64 
+background.q@bs-dsvr05.ethz.ch B 0/0/8 0.85 lx24-amd64 
+background.q@bs-dsvr06.ethz.ch B 0/0/8 0.15 lx24-amd64 
+background.q@bs-dsvr08.ethz.ch B 0/0/8 0.14 lx24-amd64 
+background.q@bs-dsvr09.ethz.ch B 0/0/8 0.11 lx24-amd64 
+background.q@bs-dsvr10.ethz.ch B 0/0/8 0.66 lx24-amd64 
+background.q@bs-dsvr11.ethz.ch B 0/0/8 0.18 lx24-amd64 
+background.q@bs-dsvr12.ethz.ch B 0/0/8 -NA- lx24-amd64 adu
+background.q@bs-dsvr13.ethz.ch B 0/0/8 -NA- lx24-amd64 adu
+background.q@bs-dsvr15.ethz.ch B 0/0/8 -NA- lx24-amd64 adu
+background.q@bs-dsvr17.ethz.ch B 0/0/8 -NA- lx24-amd64 adu
+background.q@bs-dsvr18.ethz.ch B 0/0/8 -NA- lx24-amd64 adu
+background.q@bs-dsvr19.ethz.ch B 0/0/8 0.05 lx24-amd64 
+background.q@bs-dsvr20.ethz.ch B 0/0/8 1.04 lx24-amd64 
+background.q@bs-dsvr21.ethz.ch B 0/0/8 0.03 lx24-amd64 
+background.q@bs-dsvr22.ethz.ch B 0/0/8 0.01 lx24-amd64 
+background.q@bs-dsvr23.ethz.ch B 0/0/8 0.08 lx24-amd64 
+background.q@bs-dsvr25.ethz.ch B 0/0/8 0.05 lx24-amd64 
+background.q@bs-dsvr28.ethz.ch B 0/0/8 0.05 lx24-amd64 
+background.q@bs-dsvr32.ethz.ch B 0/0/8 0.49 lx24-amd64 
+background.q@bs-dsvr51.ethz.ch B 0/0/8 0.46 lx24-amd64 
+background.q@bs-dsvr52.ethz.ch B 0/0/8 0.70 lx24-amd64 
+background.q@bs-grid64.ethz.ch B 0/0/8 0.00 lx24-amd64 
+background.q@bs-grid65.ethz.ch B 0/0/8 0.00 lx24-amd64 
+background.q@bs-grid66.ethz.ch B 0/0/8 0.01 lx24-amd64 
+background.q@bs-grid67.ethz.ch B 0/0/8 0.00 lx24-amd64 
+background.q@bs-grid68.ethz.ch B 0/0/8 0.00 lx24-amd64 
+background.q@bs-grid69.ethz.ch B 0/0/8 0.03 lx24-amd64 
+background.q@bs-grid70.ethz.ch B 0/0/8 0.04 lx24-amd64 
+background.q@bs-grid71.ethz.ch B 0/0/8 0.00 lx24-amd64 
+background.q@bs-grid72.ethz.ch B 0/0/8 1.00 lx24-amd64 
+background.q@bs-grid73.ethz.ch B 0/0/8 1.00 lx24-amd64 
+background.q@bs-grid74.ethz.ch B 0/0/8 0.01 lx24-amd64 
+background.q@bs-grid75.ethz.ch B 0/0/8 0.00 lx24-amd64 
+background.q@bs-grid76.ethz.ch B 0/0/8 0.02 lx24-amd64 
+background.q@bs-grid77.ethz.ch B 0/0/8 0.00 lx24-amd64 
+background.q@bs-grid78.ethz.ch B 0/0/8 0.00 lx24-amd64 
+background.q@bs-grid79.ethz.ch B 0/0/8 0.02 lx24-amd64 
+background.q@bs-smsvr01.ethz.c B 0/0/8 0.21 lx24-amd64 
+galaxy.q@bs-isvr01.ethz.ch BIP 0/0/16 -NA- lx24-amd64 au
+immediate.q@bs-dsvr02.ethz.ch B 0/0/8 0.74 lx24-amd64 
+immediate.q@bs-dsvr04.ethz.ch B 0/0/8 0.06 lx24-amd64 
+immediate.q@bs-dsvr05.ethz.ch B 0/0/8 0.85 lx24-amd64 
+immediate.q@bs-dsvr06.ethz.ch B 0/0/8 0.15 lx24-amd64 
+immediate.q@bs-dsvr08.ethz.ch B 0/0/8 0.14 lx24-amd64 
+immediate.q@bs-dsvr09.ethz.ch B 0/0/8 0.11 lx24-amd64 
+immediate.q@bs-dsvr10.ethz.ch B 0/0/8 0.66 lx24-amd64 
+immediate.q@bs-dsvr11.ethz.ch B 0/0/8 0.18 lx24-amd64 
+immediate.q@bs-dsvr12.ethz.ch B 0/0/8 -NA- lx24-amd64 adu
+immediate.q@bs-dsvr13.ethz.ch B 0/0/8 -NA- lx24-amd64 adu
+immediate.q@bs-dsvr15.ethz.ch B 0/0/8 -NA- lx24-amd64 adu
+immediate.q@bs-dsvr17.ethz.ch B 0/0/8 -NA- lx24-amd64 adu
+immediate.q@bs-dsvr18.ethz.ch B 0/0/8 -NA- lx24-amd64 adu
+immediate.q@bs-dsvr19.ethz.ch B 0/0/8 0.05 lx24-amd64 
+immediate.q@bs-dsvr20.ethz.ch B 0/0/8 1.04 lx24-amd64 
+immediate.q@bs-dsvr21.ethz.ch B 0/0/8 0.03 lx24-amd64 
+immediate.q@bs-dsvr22.ethz.ch B 0/0/8 0.01 lx24-amd64 
+immediate.q@bs-dsvr23.ethz.ch B 0/0/8 0.08 lx24-amd64 
+immediate.q@bs-dsvr25.ethz.ch B 0/0/8 0.05 lx24-amd64 
+immediate.q@bs-dsvr28.ethz.ch B 0/0/8 0.05 lx24-amd64 
+immediate.q@bs-dsvr32.ethz.ch B 0/0/8 0.49 lx24-amd64 
+immediate.q@bs-dsvr51.ethz.ch B 0/0/8 0.46 lx24-amd64 
+immediate.q@bs-dsvr52.ethz.ch B 0/0/8 0.70 lx24-amd64 
+immediate.q@bs-smsvr01.ethz.ch B 0/0/8 0.21 lx24-amd64 
+matlab01.q@bs-dsvr47.ethz.ch BIP 0/0/48 0.07 lx24-amd64 
+mpi01.q@bs-dsvr38.ethz.ch BIP 0/0/48 0.09 lx24-amd64 
+mpi01.q@bs-dsvr46.ethz.ch BIP 0/0/48 0.02 lx24-amd64 
+mpi01.q@bs-dsvr47.ethz.ch BIP 0/0/48 0.07 lx24-amd64 
+mpi01.q@bs-dsvr49.ethz.ch BIP 0/0/48 0.01 lx24-amd64 
+mpi01.q@bs-dsvr50.ethz.ch BIP 0/0/48 0.07 lx24-amd64 
+mpi02.q@bs-isvr02.ethz.ch BIP 0/0/16 0.36 lx24-amd64 
+mpi03.q@bs-dsvr40.ethz.ch BIP 0/48/48 48.33 lx24-amd64 
+mpi03.q@bs-dsvr41.ethz.ch BIP 0/0/48 0.08 lx24-amd64 
+mpi03.q@bs-dsvr42.ethz.ch BIP 0/0/48 0.08 lx24-amd64 
+mpi04-ht.q@bs-dsvr56.ethz.ch BIP 0/48/80 48.19 lx24-amd64 
+mpi04-ht.q@bs-dsvr57.ethz.ch BIP 0/16/80 16.04 lx24-amd64 
+mpi04-ht.q@bs-dsvr58.ethz.ch BIP 0/48/80 5.06 lx24-amd64 
+mpi04-ht.q@bs-dsvr59.ethz.ch BIP 0/32/80 6.15 lx24-amd64 
+regular.q@bs-dsvr02.ethz.ch BP 0/0/8 0.74 lx24-amd64 
+regular.q@bs-dsvr04.ethz.ch BP 0/0/8 0.06 lx24-amd64 
+regular.q@bs-dsvr05.ethz.ch BP 0/0/8 0.85 lx24-amd64 
+regular.q@bs-dsvr06.ethz.ch BP 0/0/8 0.15 lx24-amd64 
+regular.q@bs-dsvr08.ethz.ch BP 0/0/8 0.14 lx24-amd64 
+regular.q@bs-dsvr09.ethz.ch BP 0/0/8 0.11 lx24-amd64 
+regular.q@bs-dsvr10.ethz.ch BP 0/0/8 0.66 lx24-amd64 
+regular.q@bs-dsvr11.ethz.ch BP 0/0/8 0.18 lx24-amd64 
+regular.q@bs-dsvr12.ethz.ch BP 0/0/8 -NA- lx24-amd64 aAdu
+regular.q@bs-dsvr13.ethz.ch BP 0/0/8 -NA- lx24-amd64 aAdu
+regular.q@bs-dsvr15.ethz.ch BP 0/0/8 -NA- lx24-amd64 aAdu
+regular.q@bs-dsvr17.ethz.ch BP 0/0/8 -NA- lx24-amd64 aAdu
+regular.q@bs-dsvr18.ethz.ch BP 0/0/8 -NA- lx24-amd64 aAdu
+regular.q@bs-dsvr19.ethz.ch BP 0/0/8 0.05 lx24-amd64 
+regular.q@bs-dsvr20.ethz.ch BP 0/1/8 1.04 lx24-amd64 
+regular.q@bs-dsvr21.ethz.ch BP 0/0/8 0.03 lx24-amd64 
+regular.q@bs-dsvr22.ethz.ch BP 0/0/8 0.01 lx24-amd64 
+regular.q@bs-dsvr23.ethz.ch BP 0/0/8 0.08 lx24-amd64 
+regular.q@bs-dsvr25.ethz.ch BP 0/0/8 0.05 lx24-amd64 
+regular.q@bs-dsvr28.ethz.ch BP 0/0/8 0.05 lx24-amd64 
+regular.q@bs-dsvr32.ethz.ch BP 0/0/8 0.49 lx24-amd64 
+regular.q@bs-dsvr51.ethz.ch BP 0/0/8 0.46 lx24-amd64 
+regular.q@bs-dsvr52.ethz.ch BP 0/0/8 0.70 lx24-amd64 
+regular.q@bs-grid64.ethz.ch BP 0/0/8 0.00 lx24-amd64 
+regular.q@bs-grid65.ethz.ch BP 0/0/8 0.00 lx24-amd64 
+regular.q@bs-grid66.ethz.ch BP 0/0/8 0.01 lx24-amd64 
+regular.q@bs-grid67.ethz.ch BP 0/0/8 0.00 lx24-amd64 
+regular.q@bs-grid68.ethz.ch BP 0/0/8 0.00 lx24-amd64 
+regular.q@bs-grid69.ethz.ch BP 0/0/8 0.03 lx24-amd64 
+regular.q@bs-grid70.ethz.ch BP 0/0/8 0.04 lx24-amd64 
+regular.q@bs-grid71.ethz.ch BP 0/0/8 0.00 lx24-amd64 
+regular.q@bs-grid72.ethz.ch BP 0/1/8 1.00 lx24-amd64 
+regular.q@bs-grid73.ethz.ch BP 0/8/8 1.00 lx24-amd64 
+regular.q@bs-grid74.ethz.ch BP 0/0/8 0.01 lx24-amd64 
+regular.q@bs-grid75.ethz.ch BP 0/0/8 0.00 lx24-amd64 
+regular.q@bs-grid76.ethz.ch BP 0/0/8 0.02 lx24-amd64 
+regular.q@bs-grid77.ethz.ch BP 0/0/8 0.00 lx24-amd64 
+regular.q@bs-grid78.ethz.ch BP 0/0/8 0.00 lx24-amd64 
+regular.q@bs-grid79.ethz.ch BP 0/0/8 0.02 lx24-amd64 
+regular.q@bs-smsvr01.ethz.ch BP 0/0/8 0.21 lx24-amd64 
+sc.q@bs-grid64.ethz.ch BIP 0/0/8 0.00 lx24-amd64 
+sc.q@bs-grid65.ethz.ch BIP 0/0/8 0.00 lx24-amd64 
+sc.q@bs-grid66.ethz.ch BIP 0/0/8 0.01 lx24-amd64 
+sc.q@bs-grid67.ethz.ch BIP 0/0/8 0.00 lx24-amd64 
+sc.q@bs-grid68.ethz.ch BIP 0/0/8 0.00 lx24-amd64 
+sc.q@bs-grid69.ethz.ch BIP 0/0/8 0.03 lx24-amd64 
+sc.q@bs-grid70.ethz.ch BIP 0/0/8 0.04 lx24-amd64 
+sc.q@bs-grid71.ethz.ch BIP 0/0/8 0.00 lx24-amd64 
+sc.q@bs-grid72.ethz.ch BIP 0/0/8 1.00 lx24-amd64 
+sc.q@bs-grid73.ethz.ch BIP 0/0/8 1.00 lx24-amd64 
+sc.q@bs-grid74.ethz.ch BIP 0/0/8 0.01 lx24-amd64 
+sc.q@bs-grid75.ethz.ch BIP 0/0/8 0.00 lx24-amd64 
+sc.q@bs-grid76.ethz.ch BIP 0/0/8 0.02 lx24-amd64 
+sc.q@bs-grid77.ethz.ch BIP 0/0/8 0.00 lx24-amd64 
+sc.q@bs-grid78.ethz.ch BIP 0/0/8 0.00 lx24-amd64 
+sc.q@bs-grid79.ethz.ch BIP 0/0/8 0.02 lx24-amd64 

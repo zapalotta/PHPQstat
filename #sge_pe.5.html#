@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+    <body>
+        <div id="container">
+            <div id="container-inner">
+                <div id="header">
+                    <h1 id="ubuntu-header"><a href="/">Ubuntu manuals</a></h1>
+                </div>
+                <div id="subheader">
+                    <div id="subheader-search">
+                        <form method="get" action="/cgi-bin/search.py" id="cse-search-box">
+                            <input type="text" name="q" tabindex="1" id="search-box-input" />
+                            <button type="submit" name="op" id="search-box-button"><span>go</span></button>
+                            <input type="hidden" name="cx" value="003883529982892832976:5zl6o8w6f0s" />
+                            <input type="hidden" name="cof" value="FORID:9" />
+                            <input type="hidden" name="ie" value="UTF-8" />
+                            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+                        </form>
+                    </div>
+                    <div class="subheader-menu">
+                        <script>navbar();</script>
+                    </div>
+                </div>
+                <div id="content" class="clearfix content-area">
+                    <div class="level-4-nav" id="toc"></div>
+                    <script>distroAndSection();</script>
+
+Provided by: <a href='https://launchpad.net/ubuntu/lucid/+package/gridengine-common'>gridengine-common_6.2u4-2ubuntu1_all</a> <a href='https://bugs.launchpad.net/ubuntu/+source/gridengine/+filebug-advanced' title='Report a bug in the content of this documentation'><img src='/img/bug.png' alt='bug' border=0></a><br><br><pre>
+</pre><h4><b>NAME</b></h4><pre>
+       sge_pe - Sun Grid Engine parallel environment configuration file format
+
+</pre><h4><b>DESCRIPTION</b></h4><pre>
+       Parallel environments are parallel programming and runtime environments
+       allowing  for  the  execution  of  shared  memory or distributed memory
+       parallelized applications. Parallel environments usually  require  some
+       kind  of setup to be operational before starting parallel applications.
+       Examples for common parallel environments are  shared  memory  parallel
+       operating  systems  and  the  distributed  memory environments Parallel
+       Virtual Machine (PVM) or Message Passing Interface (MPI).
+
+       <u>sge_pe</u> allows for the definition of interfaces  to  arbitrary  parallel
+       environments.   Once a parallel environment is defined or modified with
+       the <b>-ap</b> or <b>-mp</b> options to <u><a href="../man1/qconf.1.html">qconf</a></u>(1) and linked with one or  more  queues
+       via <u>pe_list</u> in <u><a href="../man5/queue_conf.5.html">queue_conf</a></u>(5) the environment can be requested for a job
+       via the <b>-pe</b> switch to <u><a href="../man1/qsub.1.html">qsub</a></u>(1) together with a request of  a  range  for
+       the number of parallel processes to be allocated by the job. Additional
+       <b>-l</b> options may be used  to  specify  the  job  requirement  to  further
+       detail.
+
+       Note,  Sun Grid Engine allows backslashes (\) be used to escape newline
+       (\newline) characters. The backslash and the newline are replaced  with
+       a space (" ") character before any interpretation.
+
+</pre><h4><b>FORMAT</b></h4><pre>
+       The format of a <u>sge_pe</u> file is defined as follows:
+
+   <b>pe_name</b>
+       The  name  of  the  parallel  environment  as  defined  for  <u>pe_name</u> in
+       <u><a href="../man1/sge_types.1.html">sge_types</a></u>(1).  To be used in the <u><a href="../man1/qsub.1.html">qsub</a></u>(1) <b>-pe</b> switch.
+
+   <b>slots</b>
+       The number of parallel processes being allowed to run  in  total  under
+       the  parallel  environment  concurrently.  Type is number, valid values
+       are 0 to 9999999.
+
+   <b>user_lists</b>
+       A comma separated list of user access list names (see  <u><a href="../man5/access_list.5.html">access_list</a></u>(5)).
+       Each  user  contained  in at least one of the enlisted access lists has
+       access to the parallel environment. If the <b>user_lists</b> parameter is  set
+       to NONE (the default) any user has access being not explicitly excluded
+       via the <b>xuser_lists</b> parameter described below.  If a user is  contained
+       both  in an access list enlisted in <b>xuser_lists</b> and <b>user_lists</b> the user
+       is denied access to the parallel environment.
+
+   <b>xuser_lists</b>
+       The <b>xuser_lists</b> parameter contains a comma separated list of so  called
+       user  access lists as described in <u><a href="../man5/access_list.5.html">access_list</a></u>(5).  Each user contained
+       in at least one of the enlisted access lists is not allowed  to  access
+       the  parallel  environment. If the <b>xuser_lists</b> parameter is set to NONE
+       (the default) any user has access. If a user is contained  both  in  an
+       access  list  enlisted in <b>xuser_lists</b> and <b>user_lists</b> the user is denied
+       access to the parallel environment.
+
+   <b>start_proc_args</b>
+       The invocation command line of a start-up procedure  for  the  parallel
+       environment. The start-up procedure is invoked by <u><a href="../man8/sge_shepherd.8.html">sge_shepherd</a></u>(8) prior
+       to executing the job script. Its  purpose  is  to  setup  the  parallel
+       environment  correspondingly  to its needs.  An optional prefix "user@"
+       specifies the user under which this procedure is to  be  started.   The
+       standard  output  of  the  start-up procedure is redirected to the file
+       <u>REQNAME</u>.po<u>JID</u> in  the  job’s  working  directory  (see  <u><a href="../man1/qsub.1.html">qsub</a></u>(1)),  with
+       <u>REQNAME</u>  being  the  name  of  the job as displayed by <u><a href="../man1/qstat.1.html">qstat</a></u>(1) and <u>JID</u>
+       being the job’s identification number.  Likewise,  the  standard  error
+       output is redirected to <u>REQNAME</u>.pe<u>JID</u>
+       The  following  special variables being expanded at runtime can be used
+       (besides any other strings which have to be interpreted  by  the  start
+       and stop procedures) to constitute a command line:
+
+       <u>$pe_hostfile</u>
+              The  pathname of a file containing a detailed description of the
+              layout of the parallel environment to be setup by  the  start-up
+              procedure.  Each  line  of  the  file  refers to a host on which
+              parallel processes are to be run. The first entry of  each  line
+              denotes  the  hostname,  the second entry the number of parallel
+              processes to be run on the host, the third entry the name of the
+              queue, and the fourth entry a processor range to be used in case
+              of a multiprocessor machine.
+
+       <u>$host</u>  The name of the host on which the start-up  or  stop  procedures
+              are started.
+
+       <u>$job_owner</u>
+              The user name of the job owner.
+
+       <u>$job_id</u>
+              Sun Grid Engine’s unique job identification number.
+
+       <u>$job_name</u>
+              The name of the job.
+
+       <u>$pe</u>    The name of the parallel environment in use.
+
+       <u>$pe_slots</u>
+              Number of slots granted for the job.
+
+       <u>$processors</u>
+              The  <b>processors</b>  string  as contained in the queue configuration
+              (see <u><a href="../man5/queue_conf.5.html">queue_conf</a></u>(5)) of the master queue (the queue in which  the
+              start-up and stop procedures are started).
+
+       <u>$queue</u> The cluster queue of the master queue instance.
+
+   <b>stop_proc_args</b>
+       The  invocation  command  line of a shutdown procedure for the parallel
+       environment. The shutdown procedure is invoked by <u><a href="../man8/sge_shepherd.8.html">sge_shepherd</a></u>(8) after
+       the  job  script  has  finished.  Its  purpose  is to stop the parallel
+       environment and to  remove  it  from  all  participating  systems.   An
+       optional  prefix  "user@" specifies the user under which this procedure
+       is to be started.  The standard output of the stop  procedure  is  also
+       redirected  to  the  file  <u>REQNAME</u>.po<u>JID</u> in the job’s working directory
+       (see <u><a href="../man1/qsub.1.html">qsub</a></u>(1)), with <u>REQNAME</u> being the name of the job as  displayed  by
+       <u><a href="../man1/qstat.1.html">qstat</a></u>(1)  and <u>JID</u> being the job’s identification number.  Likewise, the
+       standard error output is redirected to <u>REQNAME</u>.pe<u>JID</u>
+       The same special variables  as  for  <b>start_proc_args</b>  can  be  used  to
+       constitute a command line.
+
+   <b>allocation_rule</b>
+       The  allocation  rule  is interpreted by the scheduler thread and helps
+       the scheduler to decide how to distribute parallel processes among  the
+       available  machines.  If, for instance, a parallel environment is built
+       for shared memory applications only, all parallel processes have to  be
+       assigned  to a single machine, no matter how much suitable machines are
+       available.   If,  however,  the  parallel   environment   follows   the
+       distributed  memory  paradigm,  an even distribution of processes among
+       machines may be favorable.
+       The current version of the scheduler  only  understands  the  following
+       allocation rules:
+
+       <b>&lt;int&gt;</b>:    An integer number fixing the number of processes per host. If
+                 the number is 1, all processes have to  reside  on  different
+                 hosts. If the special denominator <b>$pe_slots</b> is used, the full
+                 range of processes as specified with the <u><a href="../man1/qsub.1.html">qsub</a></u>(1)  <b>-pe</b>  switch
+                 has  to  be allocated on a single host (no matter which value
+                 belonging to the range is finally chosen for the  job  to  be
+                 allocated).
+
+       <b>$fill_up</b>: Starting  from  the  best  suitable host/queue, all available
+                 slots are allocated. Further hosts and queues are "filled up"
+                 as long as a job still requires slots for parallel tasks.
+
+       <b>$round_robin</b>:
+                 From  all suitable hosts a single slot is allocated until all
+                 tasks requested by the parallel job are dispatched.  If  more
+                 tasks are requested than suitable hosts are found, allocation
+                 starts again from the  first  host.   The  allocation  scheme
+                 walks  through suitable hosts in a best-suitable-first order.
+
+   <b>control_slaves</b>
+       This parameter can be set to TRUE or FALSE (the default). It  indicates
+       whether Sun Grid Engine is the creator of the slave tasks of a parallel
+       application via <u><a href="../man8/sge_execd.8.html">sge_execd</a></u>(8) and  <u><a href="../man8/sge_shepherd.8.html">sge_shepherd</a></u>(8)  and  thus  has  full
+       control  over  all  processes  in a parallel application, which enables
+       capabilities  such  as  resource  limitation  and  correct  accounting.
+       However,   to   gain  control  over  the  slave  tasks  of  a  parallel
+       application, a sophisticated PE  interface  is  required,  which  works
+       closely  together  with  Sun Grid Engine facilities. Such PE interfaces
+       are available through your local Sun Grid Engine support office.
+
+       Please set the control_slaves parameter  to  false  for  all  other  PE
+       interfaces.
+
+   <b>job_is_first_task</b>
+       The <b>job_is_first_task</b> parameter can be set to TRUE or FALSE. A value of
+       TRUE indicates that the Sun Grid Engine job script already contains one
+       of  the tasks of the parallel application (the number of slots reserved
+       for the job is the number of slots  requested  with  the  -pe  switch),
+       while  a  value  of  FALSE indicates that the job script (and its child
+       processes) is not part of the parallel program  (the  number  of  slots
+       reserved  for  the  job  is  the number of slots requested with the -pe
+       switch + 1).
+
+       If  wallclock  accounting  is  used  (execd_params  ACCT_RESERVED_USAGE
+       and/or  SHARETREE_RESERVED_USAGE set to TRUE) and <b>control_slaves</b> is set
+       to FALSE, the <b>job_is_first_task</b> parameter influences the accounting for
+       the  job:  A  value of TRUE means that accounting for cpu and requested
+       memory gets multiplied by the number of slots requested  with  the  -pe
+       switch,   if   <b>job_is_first_task</b>   is  set  to  FALSE,  the  accounting
+       information gets multiplied by number of slots + 1.
+
+   <b>urgency_slots</b>
+       For pending jobs with a slot range PE request the number  of  slots  is
+       not  determined.  This  setting  specifies the method to be used by Sun
+       Grid Engine to assess the number of slots such jobs might finally  get.
+
+       The  assumed  slot  allocation  has  a  meaning  when  determining  the
+       resource-request-based priority contribution for numeric  resources  as
+       described  in  <u><a href="../man5/sge_priority.5.html">sge_priority</a></u>(5)  and  is  displayed when <u><a href="../man1/qstat.1.html">qstat</a></u>(1) is run
+       without <b>-g</b> <b>t</b> option.
+
+       The following methods are supported:
+
+       <b>&lt;int&gt;</b>:    The specified integer number is directly used as  prospective
+                 slot amount.
+
+       <b>min</b>:      The slot range minimum is used as prospective slot amount. If
+                 no lower bound is specified with the range 1 is assumed.
+
+       <b>max</b>:      The of the slot range maximum is  used  as  prospective  slot
+                 amount.   If  no  upper bound is specified with the range the
+                 absolute maximum possible due to the PE’s  <b>slots</b>  setting  is
+                 assumed.
+
+       <b>avg</b>:      The  average  of  all  numbers  occurring within the job’s PE
+                 range request is assumed.
+
+   <b>accounting_summary</b>
+       This parameter is only checked if <b>control_slaves</b> (see above) is set  to
+       TRUE  and  thus  Sun Grid Engine is the creator of the slave tasks of a
+       parallel application via <u><a href="../man8/sge_execd.8.html">sge_execd</a></u>(8)  and  <u><a href="../man8/sge_shepherd.8.html">sge_shepherd</a></u>(8).   In  this
+       case,  accounting  information is available for every single slave task
+       started by Sun Grid Engine.
+
+       The <b>accounting_summary</b> parameter can be set to TRUE or FALSE.  A  value
+       of  TRUE  indicates  that only a single accounting record is written to
+       the <u><a href="../man5/accounting.5.html">accounting</a></u>(5) file, containing the accounting summary of the  whole
+       job  including  all  slave  tasks,  while a value of FALSE indicates an
+       individual <u><a href="../man5/accounting.5.html">accounting</a></u>(5) record is written for  every  slave  task,  as
+       well as for the master task.
+       <b>Note:</b>     When     running     tightly     integrated     jobs     with
+       <u>SHARETREE_RESERVED_USAGE</u>  set,  and  with   having   <u>accounting_summary</u>
+       enabled  in  the  parallel  environment,  reserved  usage  will only be
+       reported by the master task of the parallel job.  No per parallel  task
+       usage   records   will  be  sent  from  execd  to  qmaster,  which  can
+       significantly  reduce  load  on  qmaster  when  running  large  tightly
+       integrated parallel jobs.
+
+</pre><h4><b>RESTRICTIONS</b></h4><pre>
+       <b>Note</b>,  that  the  functionality of the start-up, shutdown and signaling
+       procedures  remains  the  full  responsibility  of  the   administrator
+       configuring the parallel environment.  Sun Grid Engine will just invoke
+       these procedures and evaluate their exit status. If the  procedures  do
+       not  perform their tasks properly or if the parallel environment or the
+       parallel application behave unexpectedly, Sun Grid Engine has no  means
+       to detect this.
+
+</pre><h4><b>SEE</b> <b>ALSO</b></h4><pre>
+       <u><a href="../man1/sge_intro.1.html">sge_intro</a></u>(1),   <u>sge</u><b>__</b><u><a href="../man1/types.1.html">types</a></u>(1),  <u><a href="../man1/qconf.1.html">qconf</a></u>(1),  <u><a href="../man1/qdel.1.html">qdel</a></u>(1),  <u><a href="../man1/qmod.1.html">qmod</a></u>(1),  <u><a href="../man1/qsub.1.html">qsub</a></u>(1),
+       <u><a href="../man5/access_list.5.html">access_list</a></u>(5), <u><a href="../man8/sge_qmaster.8.html">sge_qmaster</a></u>(8), <u><a href="../man8/sge_shepherd.8.html">sge_shepherd</a></u>(8).
+
+</pre><h4><b>COPYRIGHT</b></h4><pre>
+       See <u><a href="../man1/sge_intro.1.html">sge_intro</a></u>(1) for a full statement of rights and permissions.
+</pre>
+</pre>
+                </div>
+            </div>
+            <div id="copyright">
+                <p>
+                Powered by the <a href="https://launchpad.net/ubuntu-manpage-repository">Ubuntu Manpage Repository</a> generator
+                maintained by <a href="http://blog.dustinkirkland.com/">Dustin Kirkland</a><br />
+                &copy; 2010 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
+

@@ -2,7 +2,8 @@
 #set -xv
 # Exporting Environment Variables
 #########################################
-source /var/www/PHPQstat/phpqstat.conf
+cd /local0/grid/phpqstat
+source ./phpqstat.conf
 #########################################
 
 if ! [ -d $RRD_ROOT ]; then mkdir -p $RRD_ROOT; fi

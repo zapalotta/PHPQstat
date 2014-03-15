@@ -1,0 +1,27 @@
+##############################################################
+#                     Variables to edit                      #
+##############################################################
+MAIL=dirk.doerflinger@bsse.ethz.ch
+export SGE_ROOT=/usr/local/grid/sge/sge6.2u7/
+export SGE_CELL=default
+RRD_ROOT=/local0/grid/phpqstat/rrd
+WEB_ROOT=/local0/grid/phpqstat
+
+source $SGE_ROOT/bsse/common/settings.sh
+
+# Find all queues in your Batch Queue System
+QUEUES=$(qconf -sql | cut -d. -f1)
+# You can setup and filter all queues to monitor
+# QUEUES="fast long priority"
+# Your Queues have .q extension?
+QEXT=".q"
+
+# Under Development
+COLOR=( DF0101 FF0000 FF8000 AEB404 F7FE2E 088A08 2EFE2E 088A85 2EFEF7 0404B4 5F04B4 FF00FF B4045F F781BE 0B6138 0B3B39 000000 ) 
+CSHARE=( 0 511 572 185 549 186 80 0 284 218 188 34 127 0 50 93 101 )
+TSHARE=2944
+TCORES=1576
+CCPU=( 0 272 296 100 284 124 56 0 148 116 104 20 76 0 24 52 52 ) 
+CLIMIT=( 0 411 460 149 441 200 64 0 228 175 151 28 102 0 53 75 81 )
+ngroup=16
+tcputime=0
