@@ -1,9 +1,0 @@
-#!/bin/bash
-# Exporting Environment Variables
-#########################################
-source ./phpqstat.conf
-#########################################
-
-for i in `qconf -sql`; do 
-    qstat -f -q $i | grep -v "\-\-" | grep -v queuename | awk '{ print $1 }'; 
-done
