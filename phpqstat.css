@@ -61,3 +61,37 @@ th {
 dt {
     font-weight: bold;
 }
+
+#accountingtable tbody tr td {
+    font-size: 9px;
+}
+
+.ui-tabs .ui-tabs-nav li a {font-size:9pt !important;}
+
+.charts {
+    height: 600px;
+    width: 1200px;
+}
+
+#failed-chart {
+    height: 1000px;
+    width: 1000px;
+    float: left;
+}
+
+#failed pre {
+    font-size: 9px;
+}
+
+#spinner {
+    float: right;
+    border: 0px black solid;
+    height: 40px;
+    width: 40px;
+}
+
+h4 {
+    margin: 0px;
+    padding-top: 2px;
+    padding-bottom: 8px;
+}

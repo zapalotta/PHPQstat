@@ -1,5 +1,5 @@
 <?php header ( 'Location: qstat.php?owner=all' ); ?>
-
+<!-- Permamnently direct to qstat page -->
 
 <html>
 

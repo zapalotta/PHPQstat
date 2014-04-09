@@ -1,3 +1,7 @@
+<?php
+require_once( 'navigation.php' );
+?>
+
 <html>
 
 <head>
@@ -5,6 +9,7 @@
   <meta name="AUTHOR" content="Jordi Blasco Pallares ">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="KEYWORDS" content="gridengine sge sun hpc supercomputing batch queue linux xml qstat qhost jordi blasco solnu">
+  <meta http-equiv="refresh" content="30"/>
   <link rel="stylesheet" href="phpqstat.css" type="text/css" />
 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" />
@@ -60,7 +65,6 @@ function show_run($tokenFile,$owner) {
           </thead>
           <tbody>
 ";
-  
   $qstat = simplexml_load_file($tokenFile);
   foreach ($qstat->xpath('//job_list') as $job_list) {
   $pe=$job_list->requested_pe['name'];
@@ -76,7 +80,7 @@ function show_run($tokenFile,$owner) {
 		  <td>$job_list->slots</td>
 		  </tr>";
   }
-  exec("rm $tokenFile");
+  //  exec("rm $tokenFile");
   echo "</tbody></table><br><br>";
 
 }
@@ -119,23 +123,29 @@ function show_pend($tokenFile,$owner) {
 
 }
 
+?>
+<body>
+<body>
+<table align=center width=95% border="1" cellpadding="0" cellspacing="0"><tbody>
+<tr><td><h1>PHPQstat</h1></td></tr>
+  <tr><td CLASS=\"bottom\" align=center>
+<?php displayNav( $_GET['owner'] ); ?>
+</td>
+</tr>
 
+
+<?php
 $owner  = $_GET['owner'];
 $jobstat  = $_GET['jobstat'];
 $queue  = $_GET['queue'];
-echo "<body><table align=center width=95% border=\"1\" cellpadding=\"0\" cellspacing=\"0\"><tbody>";
-echo "<tr><td><h1>PHPQstat</h1></td></tr>
-      <tr><td CLASS=\"bottom\" align=center><a href='index.php'>Home</a> * 
-<a href=\"qhost.php?owner=$owner\">Hosts status</a> * 
-<a href=\"qstat.php?owner=$owner\">Queue status</a> * 
-<a href=\"qstat_user.php?owner=$owner\">Jobs status ($owner)</a> * 
-<a href=\"queueinfo.php?owner=all\">Queue informations</a> * 
-<a href=\"pe.php?owner=all\">PEs</a> * 
-<a href=\"about.php?owner=$owner\">About PHPQstat</a></td></tr><tr><td><br>";
+
+echo "<tr><td><br>";
 
 if($queue){$queueflag="-q $queue";}else{$queueflag="";}
 
 if($jobstat){$jobstatflag="-s $jobstat";}else{$jobstatflag="";}
+
+if($owner == "" ){$owner="all";}else{$jobstatflag="";}
 
 switch ($jobstat) {
     case "r":

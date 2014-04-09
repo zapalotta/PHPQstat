@@ -1,9 +1,14 @@
+<?php
+require_once( 'navigation.php' );
+?>
+
 <html>
 
 <head>
   <title>PHPQstat</title>
   <meta name="AUTHOR" content="Dirk Doerflinger ">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="refresh" content="30"/>
   <meta name="KEYWORDS" content="gridengine sge sun hpc supercomputing batch queue linux xml qstat qhost jordi blasco solnu">
   <link rel="stylesheet" href="phpqstat.css" type="text/css" /> 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" />
@@ -13,21 +18,13 @@
    <script type="text/javascript" language="javascript" src="/media/js/jquery.dataTables.js"></script>
  
 </head>
-
-<?php
-   $owner  = "all";
-echo "<body>";
-
-echo "<table align=center width=95% border=\"1\" cellpadding=\"0\" cellspacing=\"0\"><tbody>";
-echo "<tr><td><h1>PHPQstat</h1></td></tr>
-      <tr><td CLASS=\"bottom\" align=center><a href='index.php'>Home</a> *  
-<a href=\"qhost.php?owner=$owner\">Hosts status</a> * 
-<a href=\"qstat.php?owner=$owner\">Queue status</a> * 
-<a href=\"qstat_user.php?owner=$owner\">Jobs status</a> * 
-<a href=\"queueinfo.php?owner=all\">Queue informations</a> * 
-<a href=\"pe.php?owner=all\">PEs</a> * 
-<a href=\"about.php?owner=$owner\">About PHPQstat</a></td></tr>";
-?>
+<body>
+<table align=center width=95% border="1" cellpadding="0" cellspacing="0"><tbody>
+<tr><td><h1>PHPQstat</h1></td></tr>
+  <tr><td CLASS=\"bottom\" align=center>
+<?php displayNav( $_GET['owner'] ); ?>
+</td>
+</tr>
     <tr>
       <td>
 <br/>
