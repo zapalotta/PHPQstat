@@ -1,0 +1,5 @@
+#!/bin/bash
+# Import accounting file into database
+# ATTN: runs quite long and deletes table on start...
+
+/usr/bin/php /local0/grid/phpqstat/util/import_accountingdata.php < /usr/local/grid/sge/sge6.2u7/bsse/common/accounting 
